@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: orquestador
+
+  datasource:
+    # URL con el formato jdbc:postgresql://HOST:PUERTO/DATABASE
+    url: jdbc:postgresql://c4fqkld51su0p3.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dccmge7msm7kr6
+    username: u56jt0htjc92n7
+    password: pebed2c82ea8b58346b97f6b5e338881768811b04a285a53fd2615a7a6020dac5
+    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5432/orquestador
+#    username: postgres
+#    password: d4ni3l
+#    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    #show-sql: true # Esto imprimirá en consola las consultas SQL para que veas qué hace
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    hibernate:
+      ddl-auto: update # 🌟 ¡ESTA ES LA PALABRA MÁGICA!
+
+server:
+  port: 9090
+
+threads:
+  virtual:
+    enabled: true
+
+logging:
+  level:
+    # 1. Nivel general para toda la aplicación (Spring, Tomcat, Hibernate)
+    root: INFO
+
+    # 2. Nivel específico para TU código.
+    # Si lo cambias a DEBUG, verás logs más detallados que agregues después.
+    com.bancoppel: INFO
+
+    # 3. Silenciar un poco a Hibernate si ensucia mucho la consola
+    org.hibernate.SQL: WARN
+
+  pattern:
+    # 4. Formato visual de la consola (Fecha, Hilo, Nivel, Clase, Mensaje)
+    console: "%d{yyyy-MM-dd HH:mm:ss} %clr(%-5level) %logger{0} - %msg%n"
+
+# --- TUS REGLAS DE NEGOCIO PERSONALIZADAS ---
+bancoppel:
+  orquestador:
+    cache:
+      dias-vigencia: 20
