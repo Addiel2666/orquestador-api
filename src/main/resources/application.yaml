@@ -4,7 +4,7 @@ spring:
 
   datasource:
     # URL con el formato jdbc:postgresql://HOST:PUERTO/DATABASE
-    url: jdbc:postgres://u56jt0htjc92n7:pebed2c82ea8b58346b97f6b5e338881768811b04a285a53fd2615a7a6020dac5@c4fqkld51su0p3.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dccmge7msm7kr6
+    url: jdbc:postgresql://c4fqkld51su0p3.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dccmge7msm7kr6
     username: u56jt0htjc92n7
     password: pebed2c82ea8b58346b97f6b5e338881768811b04a285a53fd2615a7a6020dac5
     driver-class-name: org.postgresql.Driver
